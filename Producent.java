@@ -1,21 +1,27 @@
-package jdbc;
+package domain;
 
 public class Producent {
-	private int id_producent;
+	
+	private long id;
 	private String nazwa;
 	private String kraj;
 	
+	public Producent(){
+		
+	}
+	
 	public Producent(String nazwa, String kraj){
+		super();
 		this.nazwa=nazwa;
 		this.kraj=kraj;
 	}
 
-	public int getId_producent() {
-		return id_producent;
+	public long getId() {
+		return id;
 	}
 
-	public void setId_producent(int id_producent) {
-		this.id_producent = id_producent;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getNazwa() {

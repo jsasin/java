@@ -1,8 +1,8 @@
 package domain;
 
 public class Produkt {
-	private long id_produkt;
-	private String nazwa_produktu;
+	private long id;
+	private String nazwa;
 	private float cena;
 	private int objetosc_mg;
 	private long id_producent;
@@ -11,31 +11,31 @@ public class Produkt {
 		
 	}
 	
-	public Produkt(String nazwa_produktu, float cena, int objetosc_mg, int id_producent){
+	public Produkt(String nazwa, float cena, int objetosc_mg, int id_producent){
 		super();
-		this.nazwa_produktu=nazwa_produktu;
+		this.nazwa=nazwa;
 		this.cena=cena;
 		this.objetosc_mg=objetosc_mg;
 		this.id_producent=id_producent;
 	}	
 	
 	
-	public long getId_produkt() {
-		return id_produkt;
+	public long getId() {
+		return id;
 	}
 
 
-	public void setId_produkt(long id_produkt) {
-		this.id_produkt = id_produkt;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 
-	public String getNazwa_produktu() {
-		return nazwa_produktu;
+	public String getNazwa() {
+		return nazwa;
 	}
 
-	public void setNazwa_produktu(String nazwa_produktu) {
-		this.nazwa_produktu = nazwa_produktu;
+	public void setNazwa(String nazwa) {
+		this.nazwa = nazwa;
 	}
 
 	public float getCena() {

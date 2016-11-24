@@ -88,6 +88,7 @@ public class ManagerTest {
         List<Producent> lista;
         lista = m.getAllProducent();
         assertEquals(1,lista.size());
+        assertEquals("Bialynosek",m.getAllProducent().get(0).getNazwa());
 
     }
 
@@ -108,6 +109,7 @@ public class ManagerTest {
         List<Produkt> lista;
         lista = m.getAllProdukt();
         assertEquals(1,lista.size());
+        assertEquals("Metanabol",m.getAllProdukt().get(0).getNazwa());
     }
 
     @Test
@@ -127,7 +129,6 @@ public class ManagerTest {
         boolean test = m.closeConnection();
         assertTrue(test);
         assertEquals(false,m.generujBaze());
-        m=new Manager();
     }
 
 
@@ -170,6 +171,34 @@ public class ManagerTest {
         m.updateProdukt(p2);
         assertEquals(p2.getNazwa(),m.getAllProdukt().get(0).getNazwa());
 
+    }
+
+    @Test
+    public void checkselectProduktofProducent() throws Exception {
+        Producent pierwszypr = new Producent();
+        pierwszypr.setNazwa("Bialynosek");
+        pierwszypr.setKraj("Polska");
+        assertEquals(true,m.dodajProducenta(pierwszypr));
+
+        Produkt pierwszyp = new Produkt();
+        pierwszyp.setNazwa("Metanabol");
+        pierwszyp.setCena(20.50);
+        pierwszyp.setObjetosc_mg(60);
+
+        Produkt drugip = new Produkt();
+        drugip.setNazwa("HGH");
+        drugip.setCena(90.00);
+        drugip.setObjetosc_mg(40);
+
+        pierwszyp.setId_producent(m.getAllProducent().get(0).getId());
+        drugip.setId_producent(m.getAllProducent().get(0).getId());
+
+        assertEquals(true,m.dodajProdukt(pierwszyp));
+        assertEquals(true,m.dodajProdukt(drugip));
+
+        List<Produkt> lista=m.selectProduktofProducent(m.getAllProducent().get(0));
+
+        assertEquals(2,lista.size());
     }
 
 

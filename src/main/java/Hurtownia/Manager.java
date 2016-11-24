@@ -22,6 +22,8 @@ public class Manager {
     private PreparedStatement dropProdukt;
     private PreparedStatement updateProducent;
     private PreparedStatement updateProdukt;
+    private PreparedStatement selectProduktofProducent;
+
 
     public Manager(){
         try {
@@ -50,6 +52,8 @@ public class Manager {
 
             dropProducent=conn.prepareStatement("DROP TABLE IF EXISTS producent");
             dropProdukt=conn.prepareStatement("DROP TABLE IF EXISTS produkt");
+
+            selectProduktofProducent=conn.prepareStatement("SELECT * FROM produkt WHERE idproducent=?");
 
         } catch (SQLException e) {
             System.err.println("Problem z otwarciem polaczenia");
@@ -114,6 +118,37 @@ public class Manager {
 
 
 
+    public List<Produkt> selectProduktofProducent(Producent pr){
+        List<Produkt> produkty = new ArrayList<Produkt>();
+        try{
+            selectProduktofProducent.setLong(1, pr.getId());
+        }
+        catch(SQLException e){
+            System.out.println("Błąd przy składaniu prepstmnt");
+            e.printStackTrace();
+        }
+        try {
+            ResultSet rs = selectProduktofProducent.executeQuery();
+
+            while (rs.next()) {
+                Produkt p = new Produkt();
+                p.setId(rs.getInt("id_produkt"));
+                p.setNazwa(rs.getString("nazwa"));
+                p.setCena(rs.getInt("cena"));
+                p.setId_producent(rs.getInt("idproducent"));
+                produkty.add(p);
+            }
+
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return produkty;
+    }
+
+
+
+
 
     public List<Producent> getAllProducent() {
         List<Producent> producenci = new ArrayList<Producent>();
@@ -166,7 +201,7 @@ public class Manager {
             updateProdukt.executeUpdate();
         }
         catch (SQLException e) {
-            System.err.println("Blad przy usuwaniu Producenta");
+            System.err.println("Blad przy updatowaniu Produktu");
             e.printStackTrace();
             return false;
         }
@@ -181,7 +216,7 @@ public class Manager {
             updateProducent.executeUpdate();
         }
         catch (SQLException e) {
-            System.err.println("Blad przy usuwaniu Producenta");
+            System.err.println("Blad przy updatowaniu Producenta");
             e.printStackTrace();
             return false;
         }

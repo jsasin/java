@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="13" failures="0" name="Hurtownia.ManagerTest" time="7.764" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="Hurtownia.ManagerTest" time="7.629" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
@@ -63,17 +63,18 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Hurtownia.ManagerTest" name="usunProdukt" time="1.143"/>
-  <testcase classname="Hurtownia.ManagerTest" name="dodajProducenta" time="0.445"/>
-  <testcase classname="Hurtownia.ManagerTest" name="usunProducent" time="0.693"/>
-  <testcase classname="Hurtownia.ManagerTest" name="checkUpdateProdukt" time="0.625"/>
-  <testcase classname="Hurtownia.ManagerTest" name="closeConnection" time="0.391"/>
-  <testcase classname="Hurtownia.ManagerTest" name="checkUpdateProducent" time="0.681"/>
-  <testcase classname="Hurtownia.ManagerTest" name="dropProdukt" time="0.392"/>
-  <testcase classname="Hurtownia.ManagerTest" name="getAllProdukt" time="0.505"/>
-  <testcase classname="Hurtownia.ManagerTest" name="dropProducent" time="0.391"/>
-  <testcase classname="Hurtownia.ManagerTest" name="generujBaze" time="0.352"/>
-  <testcase classname="Hurtownia.ManagerTest" name="getAllProducent" time="0.475"/>
-  <testcase classname="Hurtownia.ManagerTest" name="checkrelation" time="0.875"/>
-  <testcase classname="Hurtownia.ManagerTest" name="dodajProdukt" time="0.796"/>
+  <testcase classname="Hurtownia.ManagerTest" name="usunProdukt" time="1.074"/>
+  <testcase classname="Hurtownia.ManagerTest" name="dodajProducenta" time="0.383"/>
+  <testcase classname="Hurtownia.ManagerTest" name="usunProducent" time="0.712"/>
+  <testcase classname="Hurtownia.ManagerTest" name="checkUpdateProdukt" time="0.624"/>
+  <testcase classname="Hurtownia.ManagerTest" name="closeConnection" time="0.374"/>
+  <testcase classname="Hurtownia.ManagerTest" name="checkUpdateProducent" time="0.286"/>
+  <testcase classname="Hurtownia.ManagerTest" name="dropProdukt" time="0.368"/>
+  <testcase classname="Hurtownia.ManagerTest" name="checkselectProduktofProducent" time="0.685"/>
+  <testcase classname="Hurtownia.ManagerTest" name="getAllProdukt" time="0.397"/>
+  <testcase classname="Hurtownia.ManagerTest" name="dropProducent" time="0.358"/>
+  <testcase classname="Hurtownia.ManagerTest" name="generujBaze" time="0.38"/>
+  <testcase classname="Hurtownia.ManagerTest" name="getAllProducent" time="0.586"/>
+  <testcase classname="Hurtownia.ManagerTest" name="checkrelation" time="0.661"/>
+  <testcase classname="Hurtownia.ManagerTest" name="dodajProdukt" time="0.741"/>
 </testsuite>
